@@ -8,7 +8,7 @@ public class rps {
 
         char usrChoice = ' ';
 
-        while(usrChoice != 'e') {
+        while(usrChoice == ' ') {
             System.out.println("Enter your choice Rock(r), Paper(p), Scissor(s) or (e) to Exit: ");
             usrChoice = input.next().charAt(0);
 
