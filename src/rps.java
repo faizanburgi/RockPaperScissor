@@ -4,17 +4,25 @@ import java.util.Scanner;
 public class rps {
     public static void main(String[] args) {
         Random output = new Random();
-        int rChoice = output.nextInt(3);
-        /* 0 means rock, 1 means paper, 2 means scissor*/
-
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter your choice Rock(r), Paper(p), Scissor(s) or (e) to Exit: ");
-        char usrChoice = input.next().charAt(0);
 
-        while(usrChoice!='e') {
+        char usrChoice = ' ';
+
+        while(usrChoice != 'e') {
+            System.out.println("Enter your choice Rock(r), Paper(p), Scissor(s) or (e) to Exit: ");
+            usrChoice = input.next().charAt(0);
+
+            if (usrChoice == 'e') {
+                System.out.println("Exiting game. Goodbye!");
+                break;
+            }
             if (usrChoice != 'r' && usrChoice != 'p' && usrChoice != 's') {
                 System.out.println("Invalid Choice! Try Again.");
+                continue;
             }
+
+            int rChoice = output.nextInt(3);
+            /* 0 means rock, 1 means paper, 2 means scissor*/
 
             if (rChoice == 0 && usrChoice == 'r') {
                 System.out.println("I choose Rock! OOPS, its a draw.");
